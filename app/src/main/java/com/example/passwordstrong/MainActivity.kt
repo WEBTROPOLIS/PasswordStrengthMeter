@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity(), PasswordView {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        binding.btnCheck.setText("Salir!")
         presenter = PasswordPresenter(this)
+
 
         binding.etPassword.addTextChangedListener {
             val password = it.toString()
@@ -27,8 +28,9 @@ class MainActivity : AppCompatActivity(), PasswordView {
         }
 
         binding.btnCheck.setOnClickListener {
-            val password = binding.etPassword.text.toString()
-            presenter.onPasswordChanged(password)
+           // val password = binding.etPassword.text.toString()
+            //presenter.onPasswordChanged(password)
+            finish()
         }
     }
 
